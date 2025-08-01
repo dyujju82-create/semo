@@ -3,7 +3,7 @@ name: Build Flutter APK
 on:
   push:
     branches:
-      - fix-gradel-wrapper  # أو غيّرها لفرعك
+      - fix-gradel-wrapper  # أو غيّرها 
 
 jobs:
   build:
