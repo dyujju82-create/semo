@@ -37,12 +37,22 @@
             padding: 20px;
             border-radius: 10px;
             margin-bottom: 20px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+            transition: all 0.3s ease;
+        }
+        .header:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.5);
         }
         .logo {
             width: 200px;
             height: 200px;
             margin: 0 auto;
             display: block;
+            transition: transform 0.5s ease;
+        }
+        .logo:hover {
+            transform: scale(1.1);
         }
         .features {
             display: flex;
@@ -57,6 +67,13 @@
             margin: 10px;
             width: 200px;
             text-align: center;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        }
+        .feature:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.4);
+            background-color: #3a0906;
         }
         .feature-icon {
             font-size: 40px;
@@ -72,6 +89,64 @@
             cursor: pointer;
             margin-top: 30px;
             display: inline-block;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        }
+        .button:hover {
+            background-color: #d42f24;
+            transform: scale(1.05);
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.4);
+        }
+        .movie-list {
+            display: flex;
+            overflow-x: auto;
+            padding: 20px 0;
+            margin-top: 40px;
+            scrollbar-width: thin;
+            scrollbar-color: #AB261D #250604;
+        }
+        .movie-list::-webkit-scrollbar {
+            height: 8px;
+        }
+        .movie-list::-webkit-scrollbar-track {
+            background: #250604;
+            border-radius: 10px;
+        }
+        .movie-list::-webkit-scrollbar-thumb {
+            background-color: #AB261D;
+            border-radius: 10px;
+        }
+        .movie-card {
+            min-width: 150px;
+            margin: 0 10px;
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+            transition: all 0.3s ease;
+        }
+        .movie-card:hover {
+            transform: scale(1.05);
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.5);
+        }
+        .movie-card img {
+            width: 100%;
+            height: 225px;
+            object-fit: cover;
+        }
+        .movie-title {
+            padding: 10px;
+            background-color: #250604;
+            font-size: 14px;
+        }
+        @media (max-width: 768px) {
+            .features {
+                flex-direction: column;
+                align-items: center;
+            }
+            .feature {
+                width: 80%;
+                margin-bottom: 20px;
+            }
         }
     </style>
     <script id="splash-screen-script">
@@ -89,7 +164,7 @@
             <p>تطبيق لمشاهدة الأفلام والمسلسلات</p>
         </div>
         
-        <img src="favicon.png" alt="شعار التطبيق" class="logo">
+        <img src="favicon.png" alt="شعار التطبيق" class="logo" id="app-logo">
         
         <h2>الميزات</h2>
         
@@ -113,11 +188,60 @@
             </div>
         </div>
         
-        <div class="button">تحميل التطبيق</div>
+        <h2>أحدث الأفلام</h2>
+        <div class="movie-list" id="movie-list">
+            <!-- سيتم إضافة الأفلام هنا عبر JavaScript -->
+        </div>
+        
+        <div class="button" id="download-button">تحميل التطبيق</div>
         
         <p style="margin-top: 50px;">تم تطوير التطبيق باستخدام Flutter</p>
     </div>
     
-    <script src="flutter_bootstrap.js" async=""></script>
+    <script>
+        // بيانات الأفلام
+        const movies = [
+            { title: "الفيلم الأول", image: "favicon.png" },
+            { title: "الفيلم الثاني", image: "favicon.png" },
+            { title: "الفيلم الثالث", image: "favicon.png" },
+            { title: "الفيلم الرابع", image: "favicon.png" },
+            { title: "الفيلم الخامس", image: "favicon.png" },
+            { title: "الفيلم السادس", image: "favicon.png" }
+        ];
+        
+        // إضافة الأفلام إلى القائمة
+        const movieList = document.getElementById('movie-list');
+        movies.forEach(movie => {
+            const movieCard = document.createElement('div');
+            movieCard.className = 'movie-card';
+            
+            const img = document.createElement('img');
+            img.src = movie.image;
+            img.alt = movie.title;
+            
+            const title = document.createElement('div');
+            title.className = 'movie-title';
+            title.textContent = movie.title;
+            
+            movieCard.appendChild(img);
+            movieCard.appendChild(title);
+            movieList.appendChild(movieCard);
+        });
+        
+        // إضافة تفاعل للزر
+        const downloadButton = document.getElementById('download-button');
+        downloadButton.addEventListener('click', function() {
+            alert('سيتم توفير التطبيق قريباً!');
+        });
+        
+        // تدوير الشعار
+        const appLogo = document.getElementById('app-logo');
+        appLogo.addEventListener('click', function() {
+            this.style.transform = 'rotate(360deg)';
+            setTimeout(() => {
+                this.style.transform = '';
+            }, 1000);
+        });
+    </script>
 </body>
 </html>
