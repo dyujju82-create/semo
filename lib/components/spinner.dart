@@ -1,6 +1,7 @@
 import "dart:async";
 
 import "package:flutter/material.dart";
+import "package:index/utils/color_extension.dart";
 
 class Spinner {
   Spinner(

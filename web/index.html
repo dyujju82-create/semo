@@ -1,96 +1,123 @@
-<!DOCTYPE html><html><head>
-  <base href="$FLUTTER_BASE_HREF">
-
-  <meta charset="UTF-8">
-  <meta content="IE=Edge" http-equiv="X-UA-Compatible">
-  <meta name="description" content="A new Flutter project.">
-
-  <!-- iOS meta tags & icons -->
-  <meta name="mobile-web-app-capable" content="yes">
-  <meta name="apple-mobile-web-app-status-bar-style" content="black">
-  <meta name="apple-mobile-web-app-title" content="semo">
-  <link rel="apple-touch-icon" href="icons/Icon-192.png">
-
-  <!-- Favicon -->
-  <link rel="icon" type="image/png" href="favicon.png">
-
-  <title>Semo</title>
-  <link rel="manifest" href="manifest.json">
-  
-  
-  <meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" name="viewport">
-  
-  
-  <style id="splash-screen-style">
-    html {
-      height: 100%
-    }
-
-    body {
-      margin: 0;
-      min-height: 100%;
-      background-color: #250604;
-          background-size: 100% 100%;
-    }
-
-    .center {
-      margin: 0;
-      position: absolute;
-      top: 50%;
-      left: 50%;
-      -ms-transform: translate(-50%, -50%);
-      transform: translate(-50%, -50%);
-    }
-
-    .contain {
-      display:block;
-      width:100%; height:100%;
-      object-fit: contain;
-    }
-
-    .stretch {
-      display:block;
-      width:100%; height:100%;
-    }
-
-    .cover {
-      display:block;
-      width:100%; height:100%;
-      object-fit: cover;
-    }
-
-    .bottom {
-      position: absolute;
-      bottom: 0;
-      left: 50%;
-      -ms-transform: translate(-50%, 0);
-      transform: translate(-50%, 0);
-    }
-
-    .bottomLeft {
-      position: absolute;
-      bottom: 0;
-      left: 0;
-    }
-
-    .bottomRight {
-      position: absolute;
-      bottom: 0;
-      right: 0;
-    }
-  </style>
-  <script id="splash-screen-script">
-    function removeSplashFromWeb() {
-      document.getElementById("splash")?.remove();
-      document.getElementById("splash-branding")?.remove();
-      document.body.style.background = "transparent";
-    }
-  </script>
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <base href="$FLUTTER_BASE_HREF">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta content="IE=Edge" http-equiv="X-UA-Compatible">
+    <meta name="description" content="تطبيق لمشاهدة الأفلام والمسلسلات">
+    
+    <!-- iOS meta tags & icons -->
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="apple-mobile-web-app-title" content="INDEX">
+    <link rel="apple-touch-icon" href="icons/Icon-192.png">
+    
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" href="favicon.png">
+    <link rel="manifest" href="manifest.json">
+    
+    <title>تطبيق INDEX</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            background-color: #120201;
+            color: white;
+            margin: 0;
+            padding: 0;
+            text-align: center;
+        }
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        .header {
+            background-color: #AB261D;
+            padding: 20px;
+            border-radius: 10px;
+            margin-bottom: 20px;
+        }
+        .logo {
+            width: 200px;
+            height: 200px;
+            margin: 0 auto;
+            display: block;
+        }
+        .features {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-around;
+            margin-top: 30px;
+        }
+        .feature {
+            background-color: #250604;
+            border-radius: 10px;
+            padding: 20px;
+            margin: 10px;
+            width: 200px;
+            text-align: center;
+        }
+        .feature-icon {
+            font-size: 40px;
+            margin-bottom: 10px;
+        }
+        .button {
+            background-color: #AB261D;
+            color: white;
+            border: 3px solid white;
+            border-radius: 15px;
+            padding: 15px 30px;
+            font-size: 18px;
+            cursor: pointer;
+            margin-top: 30px;
+            display: inline-block;
+        }
+    </style>
+    <script id="splash-screen-script">
+        function removeSplashFromWeb() {
+            document.getElementById("splash")?.remove();
+            document.getElementById("splash-branding")?.remove();
+            document.body.style.background = "transparent";
+        }
+    </script>
 </head>
 <body>
-  
-  
-  <script src="flutter_bootstrap.js" async=""></script>
-
-
-</body></html>
+    <div class="container">
+        <div class="header">
+            <h1>تطبيق INDEX</h1>
+            <p>تطبيق لمشاهدة الأفلام والمسلسلات</p>
+        </div>
+        
+        <img src="favicon.png" alt="شعار التطبيق" class="logo">
+        
+        <h2>الميزات</h2>
+        
+        <div class="features">
+            <div class="feature">
+                <div class="feature-icon">🗂</div>
+                <h3>مكتبة شاملة</h3>
+                <p>الوصول إلى معظم الأفلام والمسلسلات</p>
+            </div>
+            
+            <div class="feature">
+                <div class="feature-icon">🎥</div>
+                <h3>تشغيل البث</h3>
+                <p>تشغيل الأفلام والمسلسلات مباشرة</p>
+            </div>
+            
+            <div class="feature">
+                <div class="feature-icon">⏳</div>
+                <h3>مزامنة تقدم المشاهدة</h3>
+                <p>مزامنة تلقائية لتقدم التشغيل</p>
+            </div>
+        </div>
+        
+        <div class="button">تحميل التطبيق</div>
+        
+        <p style="margin-top: 50px;">تم تطوير التطبيق باستخدام Flutter</p>
+    </div>
+    
+    <script src="flutter_bootstrap.js" async=""></script>
+</body>
+</html>

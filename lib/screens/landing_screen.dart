@@ -4,7 +4,7 @@ import "package:font_awesome_flutter/font_awesome_flutter.dart";
 import "package:index/bloc/app_bloc.dart";
 import "package:index/bloc/app_event.dart";
 import "package:index/components/snack_bar.dart";
-import "package:index/gen/assets.gen.dart";
+import "package:index/utils/color_extension.dart";
 import "package:index/screens/base_screen.dart";
 import "package:index/screens/fragments_screen.dart";
 import "package:index/services/auth_service.dart";
@@ -19,7 +19,7 @@ class LandingScreen extends BaseScreen {
 
 class _LandingScreenState extends BaseScreenState<LandingScreen> {
   final AuthService _authService = AuthService();
-  final VideoPlayerController _videoController = VideoPlayerController.asset(Assets.videos.coverPortrait);
+  final VideoPlayerController _videoController = VideoPlayerController.asset("assets/videos/cover_portrait.mp4");
 
   Future<void> _initPlayback() async {
     await _videoController.initialize();

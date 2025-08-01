@@ -2,7 +2,7 @@ import "dart:async";
 
 import "package:flutter/material.dart";
 import "package:package_info_plus/package_info_plus.dart";
-import "package:index/gen/assets.gen.dart";
+
 import "package:index/screens/base_screen.dart";
 import "package:index/screens/fragments_screen.dart";
 import "package:index/screens/landing_screen.dart";
@@ -62,7 +62,8 @@ class _SplashScreenState extends BaseScreenState<SplashScreen> {
               mainAxisAlignment: MainAxisAlignment.center,
               crossAxisAlignment: CrossAxisAlignment.center,
               children: <Widget>[
-                Assets.images.appIcon.image(
+                Image.asset(
+                  "assets/images/app_icon.png",
                   width: 200,
                   height: 200,
                 ),
